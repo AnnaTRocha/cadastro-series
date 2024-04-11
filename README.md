@@ -1,3 +1,20 @@
+## Informações técnicas
+
+- PHP: v8.0.2;
+- Laravel: v9.29;
+- Composer v2.2.23;
+- Node v16.15.0;
+- Banco de dados: sqlite;
+
+## Comandos necessários:
+
+- Composer install;
+- npm install;
+- npm install laravel-mix --save-dev
+- Banco de dados: sqlite;
+- Composer 2.2.23;
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
