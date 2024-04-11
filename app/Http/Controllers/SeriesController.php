@@ -22,11 +22,29 @@ class SeriesController extends Controller
 
     public function store(Request $request)
     {
+        /* Para inserir de forma "manual"
+        
         $nomeSerie = $request->input('nome');
         $serie = new Serie();
         $serie->nome = $nomeSerie;
-        $serie->save();
+        $serie->save();*/
 
-        return redirect('/series');
+
+        /* Para inserir dados em Massa
+         (necesspario definir um fillable no Objeto)
+         
+            Se caso eu quisesse pegar SOMENTE alguns campos
+            poderia usar da sequinte forma:
+               > $request->only([nome, sinopse,...]);
+
+            Se caso eu quisesse pegar TODOS os campos
+            exceto algum:
+               > $request->except([_token]);
+         */
+
+        Serie::create($request->all());
+
+        //redirect()->route('series.index'); versão antiga
+        return to_route('series.index');
     }
 }

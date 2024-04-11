@@ -15,9 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/series');
 });
 
-Route::get('/series', [SeriesController::class, 'index']);
-Route::get('/series/criar', [SeriesController::class, 'create']);
-Route::post('/series/salvar', [SeriesController::class, 'store']);
+/* Para fazer mais enxuto, na documentação mostra a forma:
+    > Route::resource('/serie' SerieController::class);
+
+    onde ele busca as funções do controller, com base na url, exemplo:
+    /serie -> index
+    /serie/create -> create
+    ...
+*/
+
+Route::resource('/series', SeriesController::class);
