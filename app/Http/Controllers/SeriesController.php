@@ -47,4 +47,11 @@ class SeriesController extends Controller
         //redirect()->route('series.index'); versão antiga
         return to_route('series.index');
     }
+
+    public function destroy(Request $request)
+    {
+        Serie::destroy($request->series);
+        return to_route('series.index');
+    }
+
 }
