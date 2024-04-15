@@ -28,4 +28,4 @@ Route::get('/', function () {
 */
 
 Route::resource('/series', SeriesController::class)
-->only('index','create','store', 'destroy');
+->except('show');
